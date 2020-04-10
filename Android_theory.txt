@@ -1,0 +1,339 @@
+1) UI Control : 
+		-> Textview
+		-> EditText
+		-> Button
+		-> Imageview
+		-> Scrollview
+		-> switch
+		-> ImageButton
+		-> Chipgroup
+		-> Chip
+		-> Checkbox
+		-> RadioButton
+		-> ToggleButton
+		-> Floting Actionbar
+		-> Progresbar
+		-> Progresbar hor
+		-> Seekbar
+		-> Webview
+		-> Ratingbar
+		-> Searchview
+		-> spinner
+		-> Datepicker
+		-> Timepicker
+		-> Calendarview
+		-> View
+		-> HorizontalScrollview
+		-> Recyclerview
+		-> Toolbar
+		-> Include
+		-> Adview
+		-> Gridview
+		-> Listview
+		-> viewpager
+		-> cardview
+		-> AppbarLayout		
+		-> Videoview
+		-> Fragment
+		-> Textureview
+		-> Surfaceview
+		-> Horizontal Divider
+		-> Vertical
+		-> NesedScrollview
+		-> BottomAppbar
+		-> Navigation view
+		-> Bottom Nevigation
+		-> Tablayout
+		-> Tabitem
+		-> ViewStub
+		-> NavHostFragment
+		-> RequestFocas
+		-> Mapview
+		-> Tabhost
+		-> Guideline(Horizonatal)
+		-> Guideline(vertical)
+		-> Space
+ 		-> CoordinatorLayout
+		-> GestureOverlayView
+ 
+2) Layout : ------------------------------
+		-> Relativelayout
+		-> Linerlayout
+		-> Gridlayout
+		-> Tablelayout
+		-> Framelayout
+		-> Constraintlayout
+		
+3) Adapter :---------------------------------
+		-> Simple Adapter
+		-> Base Adapter
+		-> Recycler Adapter
+
+4) Menus :------------------------------------------
+		-> Option menu
+		-> Context menu
+		-> Popup menu
+5) Database :-----------------------------------------
+	
+	*Offline database :
+		-> Sqlite database
+		-> realm database
+	*Online database : 
+		-> json :
+			Picasso
+			Glide 
+		-> Retrofit :
+		-> Firebase :
+6) XML PARSING :------------------------------------
+		-> DOM parsing   
+		-> Sax Parsing   
+		-> Json Parsing
+	-----------------------------------------------
+7) Social Media Integration : 
+		-> Android Login With Facebook Account 
+		-> Android Login With Google Plus Account 
+
+8) Other : -----------------------------------
+		-> WiFi
+		-> Bluetooth
+		-> Sensor 
+		-> Display Brightness
+		-> Animetion
+		-> Notification
+		-> Bitmap
+		-> Canvas
+		-> shared prefrerence
+		-> Async Task 
+		-> Audio formate
+		-> Video formate
+		-> Service
+		-> Wake Locks 
+		-> Text to Speech 
+		-> Using Camera 
+		-> Phone Call 
+		-> Send SMS
+		-> Intent
+		-> Toast
+		-> Snackbar
+		-> Google Map
+		-> AlertDialog
+		
+	------------------------------------------------
+	
+9) Publish :
+	-> create Admob Account
+	-> create google play console Account
+
+==========================================================================================================
+
+
+ src :
+    It contains the source packages and java source files. In our src folder it currently contains
+     thepackage com.helloAndroid. The package further contains the java file “HelloAndroid.java”.
+
+ .idea:
+    This where project specific metadata is stored by Android Studio (AS). (Eclipse
+Land: project.properties file)
+
+ . gradle:
+    This is where the gradle build system's jar wrapper i.e. this jar is how AS communicates with
+    gradle installed in Windows (the OS in my case).
+
+ . build:
+    This has all the complete output of the make process i.e. classes.dex, compiled classes and
+resources, etc.
+
+ In the Android Studio GUI, only a few folders are shown. The important part is that your R.java
+is found here under build/source/<flavor>/r/<build type(optional)>/<package>/R.java
+
+ res :
+    It is one of the other important content folders.
+    It contains three subfolders for images
+drawable –hdpi
+drawable –ldpi
+drawable –mdpi
+drawable-xhdpi
+
+ layout :
+    The layout contains the main.xml which is called when the application is started.
+
+ values :
+    Contained in the values folder is used to define strings to be used
+within the applications.
+
+ mipmap:
+    The mipmap folders are for placing your app icons in only. Any other drawable
+assets you use should be placed in the relevant drawable folders .
+
+ manifests :
+    Android Manifest.xml: (see about it later.)
+
+** The Android Virtual Device **
+
+ The Virtual Device and SDK Manager is a tool used to create and manage the virtual devices that
+will host instances of your emulator. You can use the same tool both to see which version of the
+SDK you have installed and to install new SDKs when they are released.
+
+Run the Application
+• In android studio to run the application
+• First select your application
+• Then select on the green symbol to run your application.
+
+Introducing the Application Manifest
+ AndroidManifest.xml, which is similar to the web.xml file in the J2EE world, defines the contents
+and behavior of your application. For example, it lists your app’s activities and services, along
+with the permissions the application needs to run.
+
+ Every application must have an AndroidManifest.xml file (with precisely that name) in its root
+directory. The manifest file presents essential information about your app to the Android system,
+information the system must have before it can run any of the app's code.
+
+ The important elements in the manifest file are:
+ Manifest
+ Application
+ Permissions
+ Instrumentation
+ AndroidManifest.xml
+
+ Resources
+
+ No matter what your development environment, it’s always good practice to keep noncode resources
+like images and string constants external to your code. Android supports
+the externalization of resources ranging from simple values such as strings and colors to
+more complex resources like images, animations, and themes.
+
+ By externalizing resources, they become easier to maintain, update, and manage.
+
+ Android will automatically select the correct resource values withoutyourhaving to write a
+line of code.
+
+Intent:
+    Intent generically defines an “intention” to do some work. You can use intents to perform the
+    following tasks, for instance:
+
+ Broadcast a message
+ Start a service
+ Launch an activity
+ Display a web page or a list of contacts
+ Dial a phone number or answer a phone call
+
+Intents are not always initiated by your application—they’re also used by the system to notify your
+application of specific events.
+
+Fragment:
+     Fragment is a modular component in an activity which has its own life cycle and event handling,
+and it is very similar to an activity. Although fragments have their own life cycle, they are directly
+affected by their owner activity's life cycle. For instance, if anactivity is destroyed, its fragments
+are also destroyed. Everyfragment should have anowneractivity. A fragment could be added to or
+removed from an activity dynamically.
+
+ Fragments increase software reusability and provide flexibility in user interface design. A fragment
+could be used by more than one activity. This way you implement once and use multiple times.
+Furthermore, it is possible to use a fragment for different layout configurations and different
+screen modes. This way it provides flexibility in user interface design.
+
+Layout :
+     Layouts are Android’s solution to the variety of screens that come on Android devices: they
+    can have different pixel densities, different dimensions, and different aspect ratios. Typical
+    Android devices allow changing the screen orientation while applications are running, so the
+    layout infrastructure needs to be able to respond on the fly.
+
+ Layouts are intended to give developers a way to express the physical relationship of Views as
+they are drawn on the screen.
+
+ Layouts in Android are in the form of a tree, with a single root and a hierarchy of Views. Each
+View in the tree is termed the parent of the Views it contains and the child of the View that contains
+it. Layout is a two-pass process:
+
+ LinearLayout Organizes its children either horizontally or vertically.
+ TableLayout Organizes its children in tabular form.
+ RelativeLayout Organizes its children relative to one another or to the parent.
+ Grid Layout A layout that places its children in a rectangular grid.
+ FrameLayout Allows you to dynamically change the control(s) in the layout.
+
+Check Box and Radio Button :
+    The Views we present in this section are probably familiar to you from other user interfaces.
+    Their purpose is to allow the user to choose from multiple options. Check-Boxes are typically
+    used when you want to offer multiple selections with a yes/no ortrue/false choice for each.
+    Radio Buttons are used when only one choice is allowed at atime.
+
+WEBVIEW :
+    Other GUI toolkits let you use HTML for presenting information, from limited HTML renderers
+    (e.g.,Java/Swing) to embedding Internet Explorer into .NET applications. Android is much the
+    same, in that you can embed the built-in Web browser as a widget in your own activities, for
+    displaying HTML or full-fledged browsing. The Android browser is based on WebKit, the same engine
+    that powers Apple’s Safari Web browser.
+
+The Android browser is sufficiently complex that it gets its own Java package (android.webkit),
+though using the WebView widget itself can be simple or powerful, based upon your requirements.
+For simple stuff, WebView is not significantly different than any other widget in Android—pop it
+into a layout, tell it what URL to navigate to via Java code and you’re done.
+
+Introduction to Adapters :
+     An adapters manages the data model and adapts it to the individual rows in the list view.
+    An adapter extend the BaseAdapter class.
+     Adapters call the getView() method which returns a view for each item within the adapter view.
+    The layout format and the corresponding data for an item within the adapter view is set in the
+    getView() method.
+
+ListView :
+     List View is a view group that displays a list of scrollable items. The list items are automatically
+inserted to the list using an Adapter that pulls content from a source such as an array or database
+query and converts each item result into a view that's placed into the list.
+
+ For example when we need to show items in a vertical scrolling list. One interesting aspect is this
+component can be deeply customized and can be adapted to our needs.
+
+Android Menus :
+    Whether you’ve worked with Swing in Java, with WPF (Windows Presentation Foundation) in
+    Windows, or with any other UI framework, you’ve no doubt worked with menus. In addition to
+    providing comprehensive support for menus, Android presents some new patterns such as XML menus
+    and alternative menus.
+
+Dialogs :
+    A dialog is a small window that prompts the user to make a decision or enter additional information.
+    A dialog does not fill the screen and is normally used for modal events that require users to take
+    an action before they can proceed.
+
+ AlertDialog :
+    A dialog that can show a title, up to three buttons, a list of selectable items, or a custom
+    layout.
+ Toast :
+    A toast provides simple feedback about an operation in a small popup. It only fills the amount
+    of space required for the message and the current activity remains visible and interactive.
+ DatePickerDialog or TimePickerDialog
+    A dialog with a pre-defined UI that allows the user to select a date or time.
+
+MainActivity:
+    • Create a MainActivity class which extends Activity class
+    • Override the onCreate method inside this method set the content of this activity with above
+    defined activity_main.xml layout .
+    • Inside the setupViewPager method make a call to addFragment method on adapter object and
+    then call setAdapter on ViewPager reference by passing the adapter object.
+    • To Setting Icons for Tabs Tablayout , get the refrence to tabs at each position and upon which
+    call setIcon by passing the drawable resource id .
+    file : MainActivity.java
+
+RecyclerView With CardView
+What is RecyclerView?
+ RecyclerView is more flexible that ListView even if it introduces some complexities.
+ We all know how to use ListView in our app and we know if we want to increase the ListView
+performances we can use a pattern called ViewHolder.
+ This pattern consists of a simple class that holds the references to the UI components for each
+row in the ListView.
+
+ Glide :
+    Glide is an open source media management framework for Android that wraps media
+    decoding, memory and disk caching, and resource pooling into a simple and easy to use
+    interface. Glide supports fetching, decoding, and displaying video stills, images, and animated
+    GIFs. Glide includes a flexible API that allows developers to plug in to almost any network
+    stack.
+
+ Picasso :
+    Picasso is Android Image Loader librabry. If we want to display images into imageview which we
+    are fatching from database, we can load it with Picasso.
+    To use Picasso Library in your project you need toadd dependencies in your gradle file.
+    dependencies
+    {
+        compile "com.squareup.picasso:picasso:2.4.0"
+    }

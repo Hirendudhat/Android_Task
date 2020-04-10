@@ -1,0 +1,79 @@
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <LinearLayout
+3     xmlns:android="http://schemas.android.com/apk/res/android"
+4     xmlns:app="http://schemas.android.com/apk/res-auto"
+5     xmlns:tools="http://schemas.android.com/tools"
+6     android:layout_width="match_parent"
+7     android:layout_height="match_parent"
+8     android:orientation="vertical"
+9     tools:context=".MainActivity">
+10
+11    <EditText
+12        android:id="@+id/editText"
+13        android:layout_width="wrap_content"
+14        android:layout_height="wrap_content"
+15        android:hint="enter address to find location"
+16        android:inputType="textPersonName" />
+17
+18    <Button
+19        android:id="@+id/button_find"
+20        android:layout_width="wrap_content"
+21        android:layout_height="wrap_content"
+22        android:text="Find Location"
+23        android:layout_gravity="center"
+24        android:layout_marginTop="20dp" />
+25
+26    <TextView
+27        android:id="@+id/textView"
+28        android:layout_width="wrap_content"
+29        android:layout_height="wrap_content"
+30        android:text="Location is :"
+31        android:textAppearance="?android:attr/textAppearanceLarge" />
+32
+33    <View
+34        android:layout_width="match_parent"
+35        android:layout_height="10dp"
+36        android:background="#000000"
+37        android:layout_marginTop="20dp"
+38        android:layout_marginBottom="20dp"/>
+39
+40    <TextView
+41        android:layout_width="match_parent"
+42        android:layout_height="wrap_content"
+43        android:textAlignment="center"
+44        android:textSize="23dp"
+45        android:textColor="#f00"
+46        android:text="Reverse GeoCoding Example!"
+47        android:gravity="center_horizontal" />
+48    <EditText
+49        android:layout_width="match_parent"
+50        android:layout_height="wrap_content"
+51        android:layout_marginTop="20dp"
+52        android:id="@+id/Lat"
+53        android:hint="Enter Lattitude"
+54        />
+55    <EditText
+56        android:layout_width="match_parent"
+57        android:layout_height="wrap_content"
+58        android:layout_marginTop="20dp"
+59        android:id="@+id/Lon"
+60        android:hint="Enter Longitude"
+61        />
+62    <Button
+63        android:layout_width="match_parent"
+64        android:layout_height="wrap_content"
+65        android:layout_marginTop="10dp"
+66        android:id="@+id/btn"
+67        android:text="Check"
+68        />
+69    <TextView
+70        android:layout_width="match_parent"
+71        android:layout_height="wrap_content"
+72        android:id="@+id/address"
+73        android:layout_marginTop="20dp"
+74        android:textSize="20dp"
+75        android:textColor="#000"
+76
+77        />
+78
+79</LinearLayout>

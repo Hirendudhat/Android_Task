@@ -1,0 +1,74 @@
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+3     xmlns:app="http://schemas.android.com/apk/res-auto"
+4     xmlns:tools="http://schemas.android.com/tools"
+5     android:layout_width="match_parent"
+6     android:layout_height="match_parent"
+7     tools:context=".BaseAdapter">
+8 
+9     <ListView
+10        android:id="@+id/list"
+11        android:layout_width="match_parent"
+12        android:layout_height="wrap_content"/>
+13 </LinearLayout>
+  
+  <!--   design.xml <<<  make this design file    -->
+  
+1 <!--<?xml version="1.0" encoding="utf-8"?>
+2 <androidx.cardview.widget.CardView
+3 android:layout_height="70dp"
+4 android:layout_width="match_parent"
+5 xmlns:app="http://schemas.android.com/apk/res-auto"
+6 app:cardCornerRadius="10dp"
+7 app:cardUseCompatPadding="true"
+8 app:cardPreventCornerOverlap="true"
+9 xmlns:android="http://schemas.android.com/apk/res/android">
+10
+11<LinearLayout
+12    android:layout_width="match_parent"
+13    android:layout_height="wrap_content"
+14    android:orientation="horizontal">
+15
+16    <LinearLayout
+17        android:id="@+id/linear1"
+18        android:layout_width="match_parent"
+19        android:layout_height="wrap_content"
+20        android:layout_weight="1"
+21        android:orientation="horizontal"
+22        android:layout_gravity="center_vertical">
+23
+24        <com.github.siyamed.shapeimageview.CircularImageView
+25            android:id="@+id/img"
+26            android:layout_width="40dp"
+27            android:layout_height="40dp"
+28            android:scaleType="centerInside"
+29            android:layout_marginLeft="20dp"
+30            app:siBorderWidth="1dp" />
+31
+32        <TextView
+33            android:id="@+id/text"
+34            android:layout_width="match_parent"
+35            android:layout_height="wrap_content"
+36            android:layout_marginLeft="20dp"
+37            android:fontFamily="serif"
+38            android:text="Textview"
+39            android:textSize="30dp" />
+40    </LinearLayout>
+41
+42    <LinearLayout
+43        android:id="@+id/linear2"
+44        android:layout_width="match_parent"
+45        android:layout_height="wrap_content"
+46        android:layout_gravity="center_vertical"
+47        android:layout_weight="4">
+48
+49        <Button
+50            android:id="@+id/btn"
+51            android:layout_width="55dp"
+52            android:layout_height="match_parent"
+53            android:background="@drawable/save"/>
+54
+55    </LinearLayout>
+56
+57</LinearLayout>
+58</androidx.cardview.widget.CardView>-->

@@ -1,0 +1,14 @@
+1 package hirendudhat.LearnAndroid;
+2 
+3 import androidx.appcompat.app.AppCompatActivity;
+4 
+5 import android.os.Bundle;
+6 
+7 public class Linearlayout extends AppCompatActivity {
+8 
+9     @Override
+10    protected void onCreate(Bundle savedInstanceState) {
+11        super.onCreate(savedInstanceState);
+12        setContentView(R.layout.activity_linearlayout);
+13    }
+14 }

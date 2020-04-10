@@ -1,0 +1,45 @@
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <TableLayout
+3     xmlns:android="http://schemas.android.com/apk/res/android"
+4     xmlns:app="http://schemas.android.com/apk/res-auto"
+5     xmlns:tools="http://schemas.android.com/tools"
+6     android:layout_width="match_parent"
+7     android:layout_height="match_parent"
+8     tools:context=".Table_layout">
+9 
+10    <TableRow>
+11        <Button
+12            android:text="Button-1"/>
+13    </TableRow>
+14    
+15    <TableRow>
+16        <Button
+17            android:text="Button-1"/>
+18        <Button
+19            android:text="Button-1"/>
+20    </TableRow>
+21    <TableRow>
+22        <Button
+23            android:text="Button-1"/>
+24        <Button
+25            android:text="Button-1"/>
+26        <Button
+27            android:text="Button-1"/>
+28    </TableRow>
+29    <TableRow>
+30        <Button
+31            android:text="Button-1"
+32            android:layout_span="3"/>
+33    </TableRow>
+34    <TableRow>
+35        <Button
+36            android:text="Button-1"
+37            android:layout_span="2"/>
+38    </TableRow>
+39    <TableRow>
+40        <Button
+41            android:text="Button-1"
+42            android:layout_span="1"/>
+43    </TableRow>
+44    
+45 </TableLayout>

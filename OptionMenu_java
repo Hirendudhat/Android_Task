@@ -1,0 +1,51 @@
+1 package hirendudhat.LearnAndroid;
+2 
+3 import androidx.annotation.NonNull;
+4 import androidx.appcompat.app.AppCompatActivity;
+5 
+6 import android.os.Bundle;
+7 import android.view.Menu;
+8 import android.view.MenuInflater;
+9 import android.view.MenuItem;
+10import android.widget.Toast;
+11
+12public class option extends AppCompatActivity {
+13
+14    @Override
+15    protected void onCreate(Bundle savedInstanceState) {
+16        super.onCreate(savedInstanceState);
+17        setContentView(R.layout.activity_option);
+18
+19
+20    }
+21
+22    @Override
+23    public boolean onCreateOptionsMenu(Menu menu) {
+24        MenuInflater menuInflater = getMenuInflater();
+25        menuInflater.inflate(R.menu.optionmenu,menu);
+26        return true;
+27    }
+28
+29    @Override
+30    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+31        switch (item.getItemId())
+32        {
+33            case R.id.i1:
+34                Toast.makeText(this, "one", Toast.LENGTH_SHORT).show();
+35                break;
+36            case R.id.i2:
+37                Toast.makeText(this, "two", Toast.LENGTH_SHORT).show();
+38                break;
+39            case R.id.i3:
+40                Toast.makeText(this, "three", Toast.LENGTH_SHORT).show();
+41                break;
+42            case R.id.i4:
+43                Toast.makeText(this, "four", Toast.LENGTH_SHORT).show();
+44                break;
+45            default:
+46                Toast.makeText(this, "This option Not available", Toast.LENGTH_SHORT).show();
+47
+48        }
+49        return true;
+50    }
+51 }

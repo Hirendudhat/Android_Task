@@ -1,0 +1,45 @@
+1 package hirendudhat.LearnAndroid;
+2 
+3 import androidx.appcompat.app.AppCompatActivity;
+4 
+5 import android.os.Bundle;
+6 import android.widget.ArrayAdapter;
+7 import android.widget.ListView;
+8 
+9 import java.util.ArrayList;
+10import java.util.List;
+11
+12public class simpleAdapter extends AppCompatActivity {
+13
+14    ListView listView;
+15    List<String>list;
+16    @Override
+17    protected void onCreate(Bundle savedInstanceState) {
+18        super.onCreate(savedInstanceState);
+19        setContentView(R.layout.activity_simple_adapter);
+20
+21    listView=findViewById(R.id.list);
+22    list=new ArrayList<>();
+23
+24        list.add("java");
+25        list.add("android");
+26        list.add("java");
+27        list.add("php");
+28        list.add("ios");
+29        list.add("android");
+30        list.add("java");
+31        list.add("php");
+32        list.add("ios");
+33        list.add("android");
+34        list.add("java");
+35        list.add("php");
+36        list.add("ios");
+37        list.add("android");
+38        list.add("java");
+39        list.add("php");
+40        list.add("ios");
+41
+42        final ArrayAdapter arrayAdapter=new ArrayAdapter(simpleAdapter.this,android.R.layout.simple_list_item_1,list);
+43        listView.setAdapter(arrayAdapter);
+44    }
+45 }

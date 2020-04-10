@@ -1,0 +1,78 @@
+1 package hirendudhat.LearnAndroid;
+2 
+3 import androidx.appcompat.app.AppCompatActivity;
+4 
+5 import android.content.Context;
+6 import android.os.Bundle;
+7 import android.view.LayoutInflater;
+8 import android.view.View;
+9 import android.view.ViewGroup;
+10import android.widget.Button;
+11import android.widget.LinearLayout;
+12import android.widget.ListView;
+13import android.widget.TextView;
+14
+15import com.github.siyamed.shapeimageview.CircularImageView;
+16
+17public class BaseAdapter extends AppCompatActivity {
+18
+19    ListView listView;
+20    String text3[] = {"Simple","Base","Recycler"};
+21    int image[] = {R.drawable.one,R.drawable.two,R.drawable.three};
+22
+23    @Override
+24    protected void onCreate(Bundle savedInstanceState) {
+25        super.onCreate(savedInstanceState);
+26        setContentView(R.layout.activity_base_adapter);
+27
+28        listView=findViewById(R.id.list);
+29
+30        baseAdapter baseAdapter = new baseAdapter(this,text3,image);
+31        listView.setAdapter(baseAdapter);
+32    }
+33
+34}
+35class baseAdapter extends android.widget.BaseAdapter
+36{
+37
+38    Context context;
+39    String text[];
+40    int image1[];
+41
+42    public baseAdapter(Context context, String[] text, int[] image1) {
+43        this.context = context;
+44        this.text = text;
+45        this.image1 = image1;
+46    }
+47
+48    @Override
+49    public int getCount() {
+50        return text.length;
+51    }
+52
+53    @Override
+54    public Object getItem(int position) {
+55        return position;
+56    }
+57
+58    @Override
+59    public long getItemId(int position) {
+60        return position;
+61    }
+62
+63    @Override
+64    public View getView(int position, View convertView, ViewGroup parent) {
+65        LayoutInflater inflater = LayoutInflater.from(context);
+66        convertView = inflater.inflate(R.layout.design, parent, false);
+67
+68        final TextView textView = convertView.findViewById(R.id.text);
+69        CircularImageView imageView = convertView.findViewById(R.id.img);
+70        final LinearLayout linearLayout = convertView.findViewById(R.id.linear1);
+71        final Button button = convertView.findViewById(R.id.btn);
+72
+73        textView.setText(text[position]);
+74        imageView.setImageResource(image1[position]);
+75
+76        return convertView;
+77    }
+78 }

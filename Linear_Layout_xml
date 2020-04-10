@@ -1,0 +1,27 @@
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <LinearLayout
+3     xmlns:android="http://schemas.android.com/apk/res/android"
+4     xmlns:app="http://schemas.android.com/apk/res-auto"
+5     xmlns:tools="http://schemas.android.com/tools"
+6     android:layout_width="match_parent"
+7     android:layout_height="match_parent"
+8     android:orientation="vertical"
+9     tools:context=".Linearlayout">
+10
+11    <Button
+12        android:layout_width="200dp"
+13        android:layout_height="200dp"
+14        android:text="Button-1"/>
+15    <Button
+16        android:layout_width="200dp"
+17        android:layout_height="200dp"
+18        android:text="Button-2"/>
+19    <Button
+20        android:layout_width="200dp"
+21        android:layout_height="200dp"
+22        android:text="Button-3"/>
+23    <Button
+24        android:layout_width="200dp"
+25        android:layout_height="200dp"
+26        android:text="Button-4"/>
+27 </LinearLayout>

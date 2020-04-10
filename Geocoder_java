@@ -1,0 +1,116 @@
+1  package hirendudhat.LearnAndroid;
+2  
+3  import androidx.appcompat.app.AppCompatActivity;
+4  
+5  import android.location.Address;
+6  import android.location.Geocoder;
+7  import android.os.Bundle;
+8  import android.view.View;
+9  import android.widget.Button;
+10 import android.widget.EditText;
+11 import android.widget.TextView;
+12 import android.widget.Toast;
+13 
+14 import java.io.IOException;
+15 import java.util.List;
+16 import java.util.Locale;
+17 
+18 public class geocoder extends AppCompatActivity {
+19 
+20     EditText edit;
+21     TextView text;
+22 
+23     TextView addressorloc;
+24     EditText lat,lon;
+25     Button check;
+26 
+27     @Override
+28     protected void onCreate(Bundle savedInstanceState) {
+29         super.onCreate(savedInstanceState);
+30         setContentView(R.layout.activity_geocoder);
+31 
+32         edit = (EditText) findViewById(R.id.editText);
+33         text = (TextView) findViewById(R.id.textView);
+34         Button findBtn = (Button) findViewById(R.id.button_find);
+35 
+36 
+37         addressorloc = (TextView) findViewById(R.id.address);
+38         lat = (EditText) findViewById(R.id.Lat);
+39         lon = (EditText) findViewById(R.id.Lon);
+40         check =(Button) findViewById(R.id.btn);
+41 
+42 
+43         findBtn.setOnClickListener(new View.OnClickListener() {
+44 
+45             @Override
+46             public void onClick(View v) {
+47 
+48                 String address = edit.getText().toString();
+49 
+50                 Geocoder geoCoder = new Geocoder(getApplicationContext());
+51 
+52                 try {
+53                     List<Address> locations = geoCoder.getFromLocationName(
+54                             address, 1);
+55 
+56                     for (Address a : locations)
+57                     {
+58                         double latti = a.getLatitude();
+59                         double longi = a.getLongitude();
+60 
+61                         text.append(latti + "," + longi);
+62                     }
+63 
+64                 } catch (IOException e) {
+65                     // TODO Auto-generated catch block
+66                     e.printStackTrace();
+67                 }
+68 
+69             }
+70         });
+71 
+72         check.setOnClickListener(new View.OnClickListener() {
+73             @Override
+74             public void onClick(View v) {
+75                 if (lat.getText().equals("") || lon.getText().equals(""))
+76                 {
+77                     Toast.makeText(geocoder.this, "Invalid Longitude and Lattitude", Toast.LENGTH_SHORT).show();
+78 
+79                 }
+80                 else {
+81                     double latitude = Double.parseDouble(lat.getText().toString());
+82                     double longitude = Double.parseDouble(lon.getText().toString());
+83                     Geocoder gc = new Geocoder(getApplicationContext(), Locale.getDefault());
+84 
+85                     if (gc.isPresent())
+86                     {
+87                         try
+88                         {
+89                             List<Address> list = gc.getFromLocation(latitude,longitude,1);
+90                             Address address = list.get(0);
+91                             StringBuffer getadd = new StringBuffer();
+92 
+93                             getadd.append("Name: "+address.getLocality()+"\n");
+94                             getadd.append("Subadmin area: "+address.getSubAdminArea()+"\n");
+95                             getadd.append("Admin area: "+address.getAdminArea()+"\n");
+96                             getadd.append("Country Name: "+address.getCountryName()+"\n");
+97                             getadd.append("CC: "+address.getCountryCode()+"\n");
+98 
+99                             String fetchall = getadd.toString();
+100                            addressorloc.setText(fetchall);
+101
+102                            Toast.makeText(getApplicationContext(),fetchall, Toast.LENGTH_LONG).show();
+103                        }
+104                        catch (IOException e)
+105                        {
+106                            e.printStackTrace();
+107                        }
+108
+109                    }
+110                }
+111
+112            }
+113        });
+114    }
+115}
+116

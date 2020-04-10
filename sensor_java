@@ -1,0 +1,95 @@
+1 package hirendudhat.LearnAndroid;
+2 
+3 import androidx.appcompat.app.AppCompatActivity;
+4 
+5 import android.graphics.Color;
+6 import android.hardware.Sensor;
+7 import android.hardware.SensorEvent;
+8 import android.hardware.SensorEventListener;
+9 import android.hardware.SensorManager;
+10import android.os.Bundle;
+11import android.view.View;
+12import android.widget.Toast;
+13
+14public class sensor extends AppCompatActivity implements SensorEventListener
+15{
+16    SensorManager sensorManager;
+17    boolean color=false;
+18    View view;
+19    long lastupdate;
+20
+21    @Override
+22    protected void onCreate(Bundle savedInstanceState) {
+23        super.onCreate(savedInstanceState);
+24        setContentView(R.layout.activity_sensor);
+25
+26        view=findViewById(R.id.text);
+27        view.setBackgroundColor(Color.GREEN);
+28
+29        sensorManager= (SensorManager) getSystemService(SENSOR_SERVICE);
+30        lastupdate=System.currentTimeMillis();
+31    }
+32
+33    @Override
+34    public void onSensorChanged(SensorEvent sensorEvent) {
+35        if(sensorEvent.sensor.getType()==Sensor.TYPE_ACCELEROMETER)
+36        {
+37            getaccelorometer(sensorEvent);
+38        }
+39    }
+40
+41    @Override
+42    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+43
+44    }
+45    private void getaccelorometer(SensorEvent sensorEvent)
+46    {
+47
+48        float[] values = sensorEvent.values;
+49
+50        float x = values[0];
+51        float y = values[1];
+52        float z = values[2];
+53
+54        float accelationSquareRoot = (x * x + y * y + z * z)
+55                / (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
+56
+57        long actualtime = sensorEvent.timestamp;
+58
+59        if (accelationSquareRoot >= 2) //
+60        {
+61            if (actualtime - lastupdate < 200) {
+62                return;
+63            }
+64
+65            lastupdate = actualtime;
+66
+67            Toast.makeText(this, "Device was shuffled", Toast.LENGTH_SHORT).show();
+68
+69            if (color) {
+70                view.setBackgroundColor(Color.GREEN);
+71            } else {
+72                view.setBackgroundColor(Color.RED);
+73            }
+74
+75            color = !color;
+76        }
+77    }
+78    @Override
+79    protected void onResume() {
+80        super.onResume();
+81
+82        sensorManager.registerListener(this,
+83                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+84                SensorManager.SENSOR_DELAY_NORMAL);
+85    }
+86
+87    @Override
+88    protected void onPause() {
+89        super.onPause();
+90
+91        sensorManager.unregisterListener(this);
+92    }
+93}
+94
+95

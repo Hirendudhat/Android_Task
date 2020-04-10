@@ -1,0 +1,16 @@
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <RelativeLayout
+3     xmlns:android="http://schemas.android.com/apk/res/android"
+4     xmlns:app="http://schemas.android.com/apk/res-auto"
+5     xmlns:tools="http://schemas.android.com/tools"
+6     android:layout_width="match_parent"
+7     android:layout_height="match_parent"
+8     tools:context=".sensor">
+9 
+10    <TextView
+11        android:id="@+id/text"
+12        android:layout_width="match_parent"
+13        android:layout_height="match_parent"
+14        android:text="SHAKE the device "/>
+15
+16</RelativeLayout>

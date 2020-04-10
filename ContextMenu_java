@@ -1,0 +1,57 @@
+1 package hirendudhat.LearnAndroid;
+2 
+3 import androidx.annotation.NonNull;
+4 import androidx.appcompat.app.AppCompatActivity;
+5 
+6 import android.os.Bundle;
+7 import android.view.ContextMenu;
+8 import android.view.MenuInflater;
+9 import android.view.MenuItem;
+10import android.view.View;
+11import android.widget.Button;
+12import android.widget.Toast;
+13
+14public class contectmenu extends AppCompatActivity {
+15
+16    Button button;
+17    @Override
+18    protected void onCreate(Bundle savedInstanceState) {
+19        super.onCreate(savedInstanceState);
+20        setContentView(R.layout.activity_contectmenu);
+21
+22        button=findViewById(R.id.btn1);
+23
+24        registerForContextMenu(button);
+25    }
+26
+27    @Override
+28    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+29        super.onCreateContextMenu(menu, v, menuInfo);
+30        MenuInflater inflater = getMenuInflater();
+31        inflater.inflate(R.menu.optionmenu, menu);
+32    }
+33
+34    @Override
+35    public boolean onContextItemSelected(@NonNull MenuItem item) {
+36
+37        switch (item.getItemId())
+38        {
+39            case R.id.i1:
+40                Toast.makeText(this, "one", Toast.LENGTH_SHORT).show();
+41                break;
+42            case R.id.i2:
+43                Toast.makeText(this, "two", Toast.LENGTH_SHORT).show();
+44                break;
+45            case R.id.i3:
+46                Toast.makeText(this, "three", Toast.LENGTH_SHORT).show();
+47                break;
+48            case R.id.i4:
+49                Toast.makeText(this, "four", Toast.LENGTH_SHORT).show();
+50                break;
+51            default:
+52                Toast.makeText(this, "This option Not available", Toast.LENGTH_SHORT).show();
+53
+54        }
+55        return super.onContextItemSelected(item);
+56    }
+57 }

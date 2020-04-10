@@ -1,0 +1,38 @@
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <GridLayout
+3     xmlns:android="http://schemas.android.com/apk/res/android"
+4     xmlns:app="http://schemas.android.com/apk/res-auto"
+5     xmlns:tools="http://schemas.android.com/tools"
+6     android:layout_width="match_parent"
+7     android:layout_height="match_parent"
+8     tools:context=".GridLayout">
+9 
+10    <Button
+11        android:id="@+id/btn1"
+12        android:layout_width="200dp"
+13        android:layout_height="200dp"
+14        android:text="Button-1"
+15        android:layout_column="0"
+16        android:layout_row="0"/>
+17    <Button
+18        android:id="@+id/btn2"
+19        android:layout_width="200dp"
+20        android:layout_height="200dp"
+21        android:text="Button-2"
+22        android:layout_column="1"
+23        android:layout_row="0"/>
+24    <Button
+25        android:id="@+id/btn3"
+26        android:layout_width="200dp"
+27        android:layout_height="200dp"
+28        android:text="Button-3" 
+29        android:layout_column="0"
+30        android:layout_row="1"/>
+31    <Button
+32        android:layout_width="200dp"
+33        android:layout_height="200dp"
+34        android:text="Button-4"
+35        android:layout_column="1"
+36        android:layout_row="1"/>
+37    
+38 </GridLayout>

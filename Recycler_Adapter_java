@@ -1,0 +1,117 @@
+1  package hirendudhat.LearnAndroid;
+2  
+3  import androidx.annotation.NonNull;
+4  import androidx.appcompat.app.AppCompatActivity;
+5  import androidx.recyclerview.widget.LinearLayoutManager;
+6  import androidx.recyclerview.widget.RecyclerView;
+7  import android.content.Context;
+8  import android.os.Bundle;
+9  import android.view.LayoutInflater;
+10 import android.view.View;
+11 import android.view.ViewGroup;
+12 import android.widget.ImageView;
+13 import android.widget.TextView;
+14 import com.github.siyamed.shapeimageview.CircularImageView;
+15 import java.util.ArrayList;
+16 
+17 public class RecyclerAdapter extends AppCompatActivity {
+18 
+19     RecyclerView recyclerView;
+20     String text[] = {"Simple","Base","Recycler"};
+21     int image[] = {R.drawable.one,R.drawable.two,R.drawable.three};
+22 
+23     ArrayList<Model>al=new ArrayList<>();
+24 
+25     @Override
+26     protected void onCreate(Bundle savedInstanceState)
+27     {
+28         super.onCreate(savedInstanceState);
+29         setContentView(R.layout.activity_recycler_adapter);
+30 
+31         recyclerView=findViewById(R.id.recycler);
+32 
+33         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
+34         recyclerView.setLayoutManager(layoutManager);
+35 
+36         for(int i=0;i<image.length;i++)
+37         {
+38             Model m =new Model(image[i],text[i]);
+39             al.add(m);
+40 
+41             recycler adapter=new recycler(getApplicationContext(),al);
+42             recyclerView.setAdapter(adapter);
+43         }
+44     }
+45     class recycler extends RecyclerView.Adapter<recycler.MyView>
+46     {
+47 
+48         Context context;
+49         ArrayList<Model> al=new ArrayList<>();
+50 
+51         public recycler(Context context, ArrayList<Model> al) {
+52             this.context = context;
+53             this.al = al;
+54         }
+55 
+56         @NonNull
+57         @Override
+58         public MyView onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+59         {
+60             View v= LayoutInflater.from(context).inflate(R.layout.design,parent,false);
+61             return new MyView(v);
+62         }
+63 
+64         @Override
+65         public void onBindViewHolder(@NonNull MyView holder, int position)
+66         {
+67             Model m=al.get(position);
+68             holder.imageView.setImageResource(m.getImage());
+69             holder.textView.setText(m.getText());
+70         }
+71 
+72         @Override
+73         public int getItemCount()
+74         {
+75             return al.size();
+76         }
+77 
+78             class MyView extends RecyclerView.ViewHolder
+79             {
+80                 ImageView imageView;
+81                 TextView textView;
+82 
+83                 public MyView(@NonNull View itemView)
+84                 {
+85                     super(itemView);
+86 
+87                     imageView=itemView.findViewById(R.id.img);
+88                     textView=itemView.findViewById(R.id.text);
+89                 }
+90             }
+91         }
+92         class Model {
+93             int image;
+94             String text;
+95 
+96             Model(int image, String text) {
+97                 this.image = image;
+98                 this.text = text;
+99             }
+100
+101            public int getImage() {
+102                return image;
+103            }
+104
+105            public void setImage(int image) {
+106                this.image = image;
+107            }
+108
+109            public String getText() {
+110                return text;
+111            }
+112
+113            public void setText(String text) {
+114                this.text = text;
+115            }
+116        }
+117 }

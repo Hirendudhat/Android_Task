@@ -1,0 +1,42 @@
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <LinearLayout
+3     xmlns:android="http://schemas.android.com/apk/res/android"
+4     xmlns:app="http://schemas.android.com/apk/res-auto"
+5     xmlns:tools="http://schemas.android.com/tools"
+6     android:layout_width="match_parent"
+7     android:layout_height="match_parent"
+8     tools:context=".popupmenu">
+9 
+10    <Button
+11        android:id="@+id/button"
+12        android:layout_width="match_parent"
+13        android:layout_height="wrap_content"
+14        android:text="click"
+15        android:textSize="25dp"/>
+16
+17 </LinearLayout>
+
+// Create Menu File
+
+1 <?xml version="1.0" encoding="utf-8"?>
+2 <menu xmlns:tools="http://schemas.android.com/tools"
+3     xmlns:app="http://schemas.android.com/apk/res-auto"
+4     xmlns:android="http://schemas.android.com/apk/res/android">
+5 
+6     <item android:id="@+id/i1"
+7         android:icon="@drawable/one"
+8         android:title="one"/>
+9 
+10    <item android:id="@+id/i2"
+11        android:icon="@drawable/two"
+12        android:title="Two" />
+13
+14    <item android:id="@+id/i3"
+15        android:icon="@drawable/three"
+16        android:title="Three"/>
+17
+18    <item android:id="@+id/i4"
+19        android:icon="@drawable/four"
+20        android:title="Four" />
+21
+22</menu>
