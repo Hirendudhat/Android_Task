@@ -1,0 +1,66 @@
+1 package com.example.all_program;
+2 
+3 import androidx.appcompat.app.AppCompatActivity;
+4 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+5 
+6 import android.annotation.SuppressLint;
+7 import android.os.Bundle;
+8 import android.view.View;
+9 import android.webkit.WebView;
+10import android.widget.ArrayAdapter;
+11import android.widget.CheckBox;
+12import android.widget.ScrollView;
+13import android.widget.Spinner;
+14import android.widget.Toast;
+15
+16import com.google.android.material.snackbar.Snackbar;
+17
+18import java.util.ArrayList;
+19import java.util.List;
+20
+21public class UI_Control_1 extends AppCompatActivity {
+22
+23    WebView webView;
+24    ScrollView scrollView;
+25
+26    @SuppressLint("WrongConstant")
+27    @Override
+28    protected void onCreate(Bundle savedInstanceState)
+29    {
+30        super.onCreate(savedInstanceState);
+31        setContentView(R.layout.activity_u_i__control_1);
+32
+33        webView = findViewById(R.id.webview);
+34        Spinner spinner = (Spinner) findViewById(R.id.planets_spinner);
+35        scrollView = findViewById(R.id.scroll);
+36
+37        List<String> categories = new ArrayList<String>();
+38        categories.add("Automobile");
+39        categories.add("Business Services");
+40        categories.add("Computers");
+41        categories.add("Education");
+42        categories.add("Personal");
+43        categories.add("Travel");
+44
+45        // Creating adapter for spinner
+46        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+47
+48        // Drop down layout style - list view with radio button
+49        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+50
+51        // attaching data adapter to spinner
+52        spinner.setAdapter(dataAdapter);
+53
+54        webView.loadUrl("https://www.google.com/");
+55
+56
+57        scrollView.post(new Runnable() {
+58            @Override
+59            public void run() {
+60                scrollView.fullScroll(View.FOCUS_UP);
+61            }
+62        });
+63
+64        Toast.makeText(this, "Toast", Toast.LENGTH_LONG).show();
+65    }
+66	}

@@ -1,0 +1,197 @@
+1  <?xml version="1.0" encoding="utf-8"?>
+2  <ScrollView
+3      android:layout_width="match_parent"
+4      android:layout_height="match_parent"
+5      android:orientation="vertical"
+6      xmlns:android="http://schemas.android.com/apk/res/android"
+7      xmlns:app="http://schemas.android.com/apk/res-auto"
+8      xmlns:tools="http://schemas.android.com/tools"
+9      tools:context=".UI_Control_1"
+10     android:id="@+id/scroll">
+11     
+12 <LinearLayout
+13     android:orientation="vertical"
+14     android:layout_width="match_parent"
+15     android:layout_height="match_parent">
+16 
+17     <TextView
+18         android:layout_width="match_parent"
+19         android:layout_height="wrap_content"
+20         android:text="Textview"
+21         android:textSize="25dp"/>
+22     <EditText
+23         android:layout_width="match_parent"
+24         android:layout_height="wrap_content"
+25         android:hint="Edittext"
+26         android:textSize="25dp"/>
+27     <Button
+28         android:layout_width="match_parent"
+29         android:layout_height="wrap_content"
+30         android:text="Button"
+31         android:textSize="25dp"/>
+32     <LinearLayout
+33         android:layout_width="match_parent"
+34         android:layout_height="wrap_content"
+35         android:orientation="horizontal">
+36 
+37         <com.google.android.material.chip.Chip
+38             android:layout_width="wrap_content"
+39             android:layout_height="wrap_content"
+40             app:chipText="Default" />
+41 
+42         <com.google.android.material.chip.Chip
+43             style="@style/Widget.MaterialComponents.Chip.Entry"
+44             android:layout_width="wrap_content"
+45             android:layout_height="wrap_content"
+46             app:chipText="Entry" />
+47 
+48         <com.google.android.material.chip.Chip
+49             style="@style/Widget.MaterialComponents.Chip.Choice"
+50             android:layout_width="wrap_content"
+51             android:layout_height="wrap_content"
+52             app:chipText="Choice" />
+53 
+54         <com.google.android.material.chip.Chip
+55             style="@style/Widget.MaterialComponents.Chip.Action"
+56             android:layout_width="wrap_content"
+57             android:layout_height="wrap_content"
+58             app:chipText="Action" />
+59 
+60         <com.google.android.material.chip.Chip
+61             style="@style/Widget.MaterialComponents.Chip.Filter"
+62             android:layout_width="wrap_content"
+63             android:layout_height="wrap_content"
+64             app:chipText="Filter" />
+65 
+66     </LinearLayout>
+67     <com.google.android.material.chip.ChipGroup
+68         android:layout_width="wrap_content"
+69         android:layout_height="wrap_content"
+70         android:layout_marginTop="16dp"
+71         app:chipSpacing="25dp">
+72 
+73         <com.google.android.material.chip.Chip
+74             android:layout_width="wrap_content"
+75             android:layout_height="wrap_content"
+76             app:chipText="Chip" />
+77 
+78         <com.google.android.material.chip.Chip
+79             android:layout_width="wrap_content"
+80             android:layout_height="wrap_content"
+81             app:chipText="Group" />
+82 
+83         <com.google.android.material.chip.Chip
+84             android:layout_width="wrap_content"
+85             android:layout_height="wrap_content"
+86             app:chipText="with" />
+87 
+88         <com.google.android.material.chip.Chip
+89             android:layout_width="wrap_content"
+90             android:layout_height="wrap_content"
+91             app:chipText="custom" />
+92 
+93         <com.google.android.material.chip.Chip
+94             android:layout_width="wrap_content"
+95             android:layout_height="wrap_content"
+96             app:chipText="spacing" />
+97 
+98     </com.google.android.material.chip.ChipGroup>
+99     <LinearLayout
+100        android:orientation="vertical"
+101        android:layout_width="fill_parent"
+102        android:layout_height="fill_parent">
+103        <CheckBox android:id="@+id/checkbox_meat"
+104            android:layout_width="wrap_content"
+105            android:layout_height="wrap_content"
+106            android:text="checkbox1" />
+107        <CheckBox android:id="@+id/checkbox_cheese"
+108            android:layout_width="wrap_content"
+109            android:layout_height="wrap_content"
+110            android:text="checkbox2"/>
+111    </LinearLayout>
+112    <RadioGroup
+113        android:layout_width="match_parent"
+114        android:layout_height="wrap_content"
+115        android:orientation="horizontal">
+116        <RadioButton
+117            android:layout_width="wrap_content"
+118            android:layout_height="wrap_content"
+119            android:text="male"/>
+120        <RadioButton
+121            android:layout_width="wrap_content"
+122            android:layout_height="wrap_content"
+123            android:text="female"/>
+124    </RadioGroup>
+125
+126    <View
+127        android:layout_width="match_parent"
+128        android:layout_height="20dp"
+129        android:theme="@style/CardView.Dark"
+130        android:tag="@string/app_name"
+131        android:background="#0f0f0f"/>
+132
+133    <ToggleButton
+134        android:id="@+id/toggle1"
+135        android:layout_width="wrap_content"
+136        android:layout_height="wrap_content"
+137        android:checked="true"
+138        android:textOff="hiren"
+139        android:textOn="dudhat"/>
+140
+141    <Spinner
+142        android:id="@+id/planets_spinner"
+143        android:layout_width="fill_parent"
+144        android:layout_height="wrap_content"/>
+145    <ProgressBar
+146        android:layout_width="match_parent"
+147        android:layout_height="wrap_content"/>
+148    <ProgressBar
+149        style="?android:attr/progressBarStyleHorizontal"
+150        android:layout_width="match_parent"
+151        android:layout_height="wrap_content"
+152        android:id="@+id/progress"
+153        android:layout_centerHorizontal="true"
+154        android:layout_centerVertical="true"
+155        android:max="100"
+156        android:progress="45"/>
+157    <SeekBar
+158        android:layout_width="match_parent"
+159        android:layout_height="wrap_content"/>
+160    <RatingBar
+161        android:layout_width="match_parent"
+162        android:layout_height="wrap_content"/>
+163    <SearchView
+164        android:layout_width="match_parent"
+165        android:layout_height="wrap_content"/>
+166    <com.google.android.material.floatingactionbutton.FloatingActionButton
+167        android:layout_width="match_parent"
+168        android:layout_height="wrap_content"
+169        android:src="@mipmap/ic_launcher"/>
+170    <Switch
+171        android:layout_width="match_parent"
+172        android:layout_height="wrap_content"
+173        android:text="switch"/>
+174    <ImageView
+175        android:layout_width="100dp"
+176        android:layout_height="100dp"
+177        android:src="@mipmap/ic_launcher"/>
+178    <ImageButton
+179        android:layout_width="100dp"
+180        android:layout_height="100dp"
+181        android:src="@mipmap/ic_launcher"/>
+182    <WebView
+183        android:id="@+id/webview"
+184        android:layout_width="match_parent"
+185        android:layout_height="300dp"/>
+186    <CalendarView
+187        android:layout_width="match_parent"
+188        android:layout_height="wrap_content"/>
+189    <DatePicker
+190        android:layout_width="match_parent"
+191        android:layout_height="wrap_content"/>
+192    <TimePicker
+193        android:layout_width="match_parent"
+194        android:layout_height="wrap_content"/>
+195
+196	</LinearLayout>
+197	</ScrollView>
