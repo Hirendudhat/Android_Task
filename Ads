@@ -1,4 +1,4 @@
-Adamob Ads Example
+Adamob Ads Example -
 
 
     implementation 'com.google.android.gms:play-services-ads:19.1.0'
