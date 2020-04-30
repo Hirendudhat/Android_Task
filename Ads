@@ -1,0 +1,183 @@
+Adamob Ads Example
+
+
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+
+
+	<meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+			
+			Link : https://github.com/googleads/googleads-mobile-android-examples/releases/tag/5.7
+Banner : 
+
+xml
+
+<com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+	
+java
+
+AdView adView;
+    AdRequest adRequest;
+	
+	First ->
+	
+	adView = (AdView) findViewById(R.id.adView);
+	adRequest = new AdRequest.Builder().build();
+	adView.loadAd(adRequest);
+	
+		
+	secound ->
+	
+	//banner ads code
+	RelativeLayout relativeLayout = new RelativeLayout(Banner.this);
+	int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, Banner.this.getResources().getDisplayMetrics());
+	RelativeLayout.LayoutParams relativeParam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, height);
+	relativeLayout.setLayoutParams(relativeParam);
+
+	RelativeLayout adContain=findViewById(R.id.baner_bottom);
+	final AdView mAdView = new AdView(Banner.this);
+	adContain.addView(mAdView);
+	adContain.addView(relativeLayout);
+	mAdView.setAdSize(AdSize.BANNER);
+	mAdView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+	mAdView.loadAd(new AdRequest.Builder().build());
+	mAdView.setAdListener(new AdListener() 
+		{
+			  @Override
+			  public void onAdClosed() {
+				  super.onAdClosed();
+			  }
+
+			  @Override
+			  public void onAdFailedToLoad(int i) {
+				  super.onAdFailedToLoad(i);
+			  }
+
+			  @Override
+			  public void onAdLeftApplication() {
+				  super.onAdLeftApplication();
+			  }
+
+			  @Override
+			  public void onAdOpened() {
+				  super.onAdOpened();
+			  }
+
+			  @Override
+			  public void onAdLoaded() {
+				  super.onAdLoaded();
+			  }
+
+			  @Override
+			  public void onAdClicked() {
+				  super.onAdClicked();
+			  }
+
+			  @Override
+			  public void onAdImpression() {
+				  super.onAdImpression();
+			  }
+		}
+	);
+	
+	
+	
+	---------------------------------------------------------
+
+// InterstitialAd
+
+	InterstitialAd mInterstitialAd;
+
+	MobileAds.initialize(this);
+	mInterstitialAd = new InterstitialAd(this);
+	mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+	mInterstitialAd.loadAd(new AdRequest.Builder().build());
+			
+	button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, Interstitial.class);
+                startActivity(intent);
+
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                    Toast.makeText(MainActivity.this, "no add show", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+		
+	-----------------------------------------------------------------
+	
+//RewardedAd
+
+    RewardedAd rewardedAd;
+
+
+	rewardedAd = new RewardedAd(this,
+                "ca-app-pub-3940256099942544/5224354917");
+
+        final RewardedAdLoadCallback adLoadCallback = new RewardedAdLoadCallback() {
+            @Override
+            public void onRewardedAdLoaded() {
+                // Ad successfully loaded.
+            }
+
+            @Override
+            public void onRewardedAdFailedToLoad(int errorCode) {
+                // Ad failed to load.
+            }
+        };
+        rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+		
+	button3.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+
+			Intent intent = new Intent(MainActivity.this, Rewarded.class);
+			startActivity(intent);
+
+			if (rewardedAd.isLoaded()) {
+				Activity activityContext = MainActivity.this;
+				RewardedAdCallback adCallback = new RewardedAdCallback() {
+					@Override
+					public void onRewardedAdOpened() {
+						// Ad opened.
+					}
+
+					@Override
+					public void onRewardedAdClosed() {
+						// Ad closed.
+					}
+
+					@Override
+					public void onUserEarnedReward(@NonNull RewardItem reward) {
+						// User earned reward.
+					}
+
+					@Override
+					public void onRewardedAdFailedToShow(int errorCode) {
+						// Ad failed to display.
+					}
+				};
+				rewardedAd.show(activityContext, adCallback);
+			} else {
+				Log.d("TAG", "The rewarded ad wasn't loaded yet.");
+				Toast.makeText(MainActivity.this, "ads fail", Toast.LENGTH_SHORT).show();
+			}
+		}
+	});
