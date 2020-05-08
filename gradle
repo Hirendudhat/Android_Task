@@ -1,0 +1,41 @@
+Gradle compile statement
+
+//Admob
+
+	<meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+			
+		implementation 'com.google.android.gms:play-services-ads:19.1.0'
+			
+//volly&json
+    implementation 'com.android.volley:volley:1.1.1'
+
+//Piccaso
+	implementation 'com.squareup.picasso:picasso:2.5.0'
+	
+//cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+//material << make shape file
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+
+//circleimageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+//navigation gradle
+    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+    implementation 'androidx.navigation:navigation-ui:2.2.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+//recycler gragle
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta04'
+
+//Google Map
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+
+//chip and chipgroup
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+    implementation 'com.google.android.material:material:1.0.0-alpha1'
